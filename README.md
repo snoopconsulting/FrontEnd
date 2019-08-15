@@ -12,7 +12,7 @@ Aquí se expondrá el trabajo de cada reunión de especialidad, bienvenido aquel
 
 * Luego de cada reunión disponibilizaremos una carpeta con el resultado y material de lo que se llegó a hacer en la misma.
 * Durante la semana todo aquel que cuenta con tiempo ya sea por parates de proyectos o no tener tareas asignadas, debe aportar mejorando el contenido del mismo. 
-* **Para no pisarnos** Se creó un proyecto en GitHub, podemos proponer issues, tomarlos (Asignándose como responsables) y moverlo dentro del **Canvan.** 
+* **Para no pisarnos** Se creó un proyecto en GitHub, podemos proponer issues, tomarlos (Asignándose como responsables) y moverlo dentro del **Kanban.** 
 * Se debe crear un branch con el nombre nomenclado de la siguiente manera ```iss<NroIssue><NombreDelBranch>```
 * Una vez finalizada la terea hacer un push del branch a Origin y hacer el PR desde ese mismo branch.
 * **Nunca trabajar sobre master**
