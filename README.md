@@ -22,3 +22,6 @@ _Importante:_ antes de iniciar con una modificación o un nuevo Issue validar qu
 * Una vez realizadas las modificaciones que crean correspondientes, se enviará un PR a Nicolas Velazco (usuario de GitHub **nfvelazco**)
 
 
+## Idea solucion
+
+* En notas.md hay una posible idea a la solucion del problema planteado en la primer reunion de Especialidad a la creacion de numeros romanos a partir de un valor decimal de 3 digitos
