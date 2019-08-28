@@ -84,20 +84,11 @@ function init(arrayX, arrayY) {
     result = ordenarPorMenorDistancia(result);
 
     // Información de salida
-    console.log('Valores de entrada: ');
-    console.log('Valores en X: ', arrayX);
-    console.log('Valores en Y: ', arrayY);
-    console.log();
-    
-    console.log('*****************************************************************************');    
-
-    console.log();
-    console.log('Array resultante: ');
-    console.log(result);
-    console.log();
-    console.log('(x1, y1): coordenadas punto 1 | (x2, y2): coordenadas punto 2 | d: distancia entre los dos puntos.');
-    console.log('Queda pendiente ordenar el array por valor distancia de cada objeto y finalizado :D');
-    console.log(result);
+    let rta = "";
+    for (let i = 0; i < result.length; i++) {
+        rta += "["+result[i].x1+","+ result[i].y1+"] ["+ result[i].x2+","+ result[i].y2+"] = " + result[i].d+"\n";
+    }
+    console.log(rta);
 }
 
 // Se lanza la funcion principal de la aplicacion
