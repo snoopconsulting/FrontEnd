@@ -1,6 +1,6 @@
 // Arrays de entrada
-var x = [0, 2, 14, 7];
-var y = [-1, 3, -5];
+var arrayX = [0, 2, 14, 7];
+var arrayY = [-1, 3, -5];
 
 // Variables que vamos a emplear
 var x1;
@@ -23,31 +23,35 @@ var obj = {
 var result = [];
 
 // Se recorren los dos arrays de entrada para formar los arrays (coordenadasX y corrdenadasY) con todos los posibles puntos
-function generarArrayCordenadas(x , y){
-    x.forEach(elementX => {
-        y.forEach(elementY => {
-            coordenadasX.push(elementX);
-            coordenadasY.push(elementY);
+function generarArrayCordenadas(arrayX , arrayY) {
+    arrayX.forEach(x => {
+        arrayY.forEach(y => {
+            coordenadasX.push(x);
+            coordenadasY.push(y);
         });
     });
 }
 
 // Se valida que cada array contenga al menos un elemento
-function validarArray(x,y){
-    return x.length>0 && y.length>0;
+function validarArray(arrayX, arrayY){
+    return arrayX.length > 0 && arrayY.length > 0;
+}
+
+function ordenarPorMenorDistancia(result) {
+    return result.sort((a, b) => a.d - b.d);
 }
 
 // Funcion principal de la aplicacion
-function init(x, y) {
+function init(arrayX, arrayY) {
     // Se valida que los arrays contengan al menos un elemento cada uno
-    if (!validarArray(x, y)) {
+    if (!validarArray(arrayX, arrayY)) {
         console.log('Cada array debe contener al menos un elemento.');
 
         return false;
     }
 
     // Generar los dos arrays con todos los puntos posibles según los arrays de entrada
-    generarArrayCordenadas(x, y);
+    generarArrayCordenadas(arrayX, arrayY);
 
     // Generar todas las posibles distancias entre cualquier pareja de puntos existente
     // Usamos mismo indice (index) para recorrer arreglo en X y en Y y mismo tamaño máximo (coordenadasX) ya tienen misma longitud
@@ -77,10 +81,12 @@ function init(x, y) {
         }
     }
 
+    result = ordenarPorMenorDistancia(result);
+
     // Información de salida
     console.log('Valores de entrada: ');
-    console.log('Valores en X: ', x);
-    console.log('Valores en Y: ', y);
+    console.log('Valores en X: ', arrayX);
+    console.log('Valores en Y: ', arrayY);
     console.log();
     
     console.log('*****************************************************************************');    
@@ -89,10 +95,10 @@ function init(x, y) {
     console.log('Array resultante: ');
     console.log(result);
     console.log();
-    console.log('(x1. y1): coordenadas punto 1 | (x2, y2): coordenadas punto 2 | d: distancia entre los dos puntos.');
+    console.log('(x1, y1): coordenadas punto 1 | (x2, y2): coordenadas punto 2 | d: distancia entre los dos puntos.');
     console.log('Queda pendiente ordenar el array por valor distancia de cada objeto y finalizado :D');
-    console.log();
+    console.log(result);
 }
 
 // Se lanza la funcion principal de la aplicacion
-init(x, y);
+init(arrayX, arrayY);
