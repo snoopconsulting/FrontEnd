@@ -1,0 +1,64 @@
+{
+  "processes": [
+    {
+      "id": 1,
+      "title": "Proceso 1",
+      "x": "20.00",
+      "y": "0.00",
+      "color": "BROWN",
+      "brother": false,
+      "next": 3,
+      "active": true
+    },
+    {
+      "id": 2,
+      "title": "Proceso 2",
+      "x": "10.00",
+      "y": "10.00",
+      "color": "BROWN",
+      "brother": true,
+      "next": 4,
+      "active": false
+    },
+    {
+      "id": 3,
+      "title": "Proceso 3",
+      "x": "50.10",
+      "y": "0.00",
+      "color": "BROWN",
+      "brother": false,
+      "next": 5,
+      "active": false
+    },
+    {
+      "id": 4,
+      "title": "Proceso 4",
+      "x": "10.00",
+      "y": "20.00",
+      "color": "BROWN",
+      "brother": true,
+      "next": 6,
+      "active": false
+    },
+    {
+      "id": 5,
+      "title": "Proceso 5",
+      "x": "80.10",
+      "y": "0.00",
+      "color": "BROWN",
+      "brother": false,
+      "next": 2,
+      "active": false
+    },
+    {
+      "id": 6,
+      "title": "Proceso 6",
+      "x": "10.00",
+      "y": "30.00",
+      "color": "BROWN",
+      "brother": true,
+      "next": 1,
+      "active": false
+    }
+  ]
+}
