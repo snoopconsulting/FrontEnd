@@ -2,17 +2,17 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import './timer.css'
 
-function Timer ({start}) {
+function Timer ({start, changeTimeRunning}) {
   const [time, setTime] = useState(4);
 
   useEffect(() => {
     if (start && time >= 0) {
-      {this.props.changeTimeRunning(true)}
+      {changeTimeRunning(true)}
       setTimeout(() => {
         setTime(time - 1);
       }, 1000);
     } else {
-      {this.props.changeTimeRunning(false)}
+      {changeTimeRunning(false)}
       setTime(4);
     }
   });
@@ -25,7 +25,8 @@ function Timer ({start}) {
 }
 
 Timer.propTypes = {
-  start: PropTypes.bool.isRequired
+  start: PropTypes.bool.isRequired,
+  changeTimeRunning: PropTypes.func.isRequired,
 };
 
 export default Timer;
