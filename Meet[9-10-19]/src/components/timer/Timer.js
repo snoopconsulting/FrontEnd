@@ -7,10 +7,12 @@ function Timer ({start}) {
 
   useEffect(() => {
     if (start && time >= 0) {
+      {this.props.changeTimeRunning(true)}
       setTimeout(() => {
         setTime(time - 1);
       }, 1000);
     } else {
+      {this.props.changeTimeRunning(false)}
       setTime(4);
     }
   });
