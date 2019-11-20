@@ -3,6 +3,7 @@ import configureStore from './configureStore';
 import { Provider } from 'react-redux';
 import Score from './components/score/Score'
 import Timer from './components/timer/Timer'
+import Tablero from './containers/tablero/Tablero'
 import './App.css'
 
 const store = configureStore();
@@ -17,6 +18,9 @@ function App() {
           <Score score={0} usuario={2} />
         </div>
       </div>
+      <main className="tablero">
+        <Tablero />
+      </main>
     </Provider>
   );
 }
