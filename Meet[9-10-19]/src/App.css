@@ -7,6 +7,8 @@
   justify-content: space-between;
 }
 .tablero{
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
   display: flex;
+  margin: 95px 0;
 }
