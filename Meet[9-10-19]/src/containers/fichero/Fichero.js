@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Ficha from '../../components/ficha/Ficha';
 
+import './fichero.css';
+
 class Fichero extends Component {
     render() {
         return (

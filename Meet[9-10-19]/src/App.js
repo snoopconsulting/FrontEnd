@@ -4,6 +4,8 @@ import { Provider } from 'react-redux';
 import Score from './components/score/Score'
 import Timer from './components/timer/Timer'
 import Tablero from './containers/tablero/Tablero'
+import Fichero from './containers/fichero/Fichero'
+import { TYPE_X, TYPE_O } from './utils/constants'
 import './App.css'
 
 const store = configureStore();
@@ -19,7 +21,9 @@ function App() {
         </div>
       </div>
       <main className="tablero">
+        <Fichero />
         <Tablero />
+        <Fichero />
       </main>
     </Provider>
   );

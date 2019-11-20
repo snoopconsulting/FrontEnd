@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TYPE_X, TYPE_O} from './../../utils/constants':
+import { TYPE_X, TYPE_O} from './../../utils/constants';
 import PropTypes from 'prop-types';
 
 class Ficha extends Component {
