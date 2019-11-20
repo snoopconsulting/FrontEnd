@@ -1,6 +1,7 @@
 import React from 'react'
 import Score from './components/score/Score'
 import Timer from './components/timer/Timer'
+import Tablero from './containers/tablero/Tablero'
 import './App.css'
 
 function App() {
@@ -11,6 +12,9 @@ function App() {
         <Timer start={false}/>
         <Score score={0} usuario={2} />
       </div>
+      <main className="tablero">
+        <Tablero />
+      </main>
     </div>
   );
 }
