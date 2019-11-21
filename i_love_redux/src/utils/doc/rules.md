@@ -6,3 +6,11 @@
 - UpperCamelCase: [actions], [components], [containers], [reducers], [services]
 - lowerCamelCase: [config]
 - snake_case: [utils]
+
+- Nombre.js (Components)
+- NombreContainer.js
+- nombreAction.js
+- nombreReducer.js
+- nombreConstant.js
+- nombreStore.js
+- nombreRoot.js
