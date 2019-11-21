@@ -1,27 +1,31 @@
+
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import './timer.css'
 
 function Timer ({start, finishLoop, timerLoop}) {
-  let time = timerLoop;
+  const [seconds, setTime] = useState(timerLoop);
 
-  const run = () => {
-    setInterval(() => {
-      if(start){
-        debugger;
-      time= time -1;
-      if (time == 0){
-        finishLoop();
+  useEffect(() => {
+    if(start){
+      const intervalId = setInterval(() => {
+          if(seconds === 0){
+            finishLoop();
+            setTime(timerLoop);
+          }
+          else{
+            setTime(seconds - 1);
+          }
+      }, 1000);
+      return () =>{
+      clearInterval(intervalId);
       }
     }
-    }, 1000);
-  }
-
-  run();
+  }, [seconds,start,timerLoop,finishLoop]);
 
   return(
     <div className='timer-content'>
-      <span>{time}</span>
+      <span>{seconds}</span>
     </div>
   );
 }

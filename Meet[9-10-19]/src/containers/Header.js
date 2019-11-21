@@ -14,11 +14,17 @@ class Header extends Component {
 
   }
 
+  resetCont = ()=>{
+    this.props.changeTimeRunning(true);
+  }
+
     render() {
         return (
             <div className="App-header">
                 <Score score={0} usuario={'1'} />
+                
                 <Timer start={this.props.timer.isTimerRunning} finishLoop={this.changeTimeRunning} timerLoop={this.props.timer.timerLoop} />
+                <button onClick={this.resetCont}>Reset</button>  
                 <Score score={0} usuario={'2'} />
             </div>
         );
