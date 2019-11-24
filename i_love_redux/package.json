@@ -14,7 +14,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "create-react-redux-structure-snoop": "mkdir ./process.env.name && chmod +x ./create-react-redux-structure-snoop.sh && ./create-react-redux-structure-snoop.sh && echo Structure Snoop is created OK"
+    "create-react-redux-structure-snoop": "chmod +x ./create-react-redux-structure-snoop.sh && ./create-react-redux-structure-snoop.sh && echo Structure Snoop is created OK"
   },
   "eslintConfig": {
     "extends": "react-app"
