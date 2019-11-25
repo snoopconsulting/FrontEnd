@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { Provider } from 'react-redux';
 import initStore from './config/store/indexStore.js';
-import BodyContainer from './containers/BodyContainer';
+import VideoContainer from './containers/VideoContainer';
 
 const store = initStore();
 
@@ -14,7 +14,7 @@ function App() {
           Header
         </header>
         <section>
-          <BodyContainer />
+          <VideoContainer />
         </section>
         <footer>
           Footer
