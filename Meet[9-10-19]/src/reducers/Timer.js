@@ -1,7 +1,8 @@
 import { SET_TIME_RUNNING } from '../utils/ActionTypes';
 
 const initialState = {
-    isTimeRunning: false
+    timerLoop: 5,
+    isTimerRunning: true
 };
 
 export default ( state = initialState, { type, payload } ) => {
@@ -9,7 +10,7 @@ export default ( state = initialState, { type, payload } ) => {
         case SET_TIME_RUNNING:
             return {
                 ...state,
-                isTimeRunning: payload
+                isTimerRunning: payload
             };
     
         default:

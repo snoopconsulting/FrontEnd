@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import timerReducer from './Timer';
 
 const appReducer = combineReducers({
+  timerLoop: 5,
   timer: timerReducer,
 });
 

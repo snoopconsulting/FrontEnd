@@ -1,8 +1,7 @@
 import React from 'react'
 import configureStore from './configureStore';
 import { Provider } from 'react-redux';
-import Score from './components/score/Score'
-import Timer from './components/timer/Timer'
+import Header from './containers/Header'
 import Tablero from './containers/tablero/Tablero'
 import Fichero from './containers/fichero/Fichero'
 import { TYPE_X, TYPE_O } from './utils/constants'
@@ -14,11 +13,7 @@ function App() {
   return (
     <Provider store={ store } >
       <div className="App">
-        <div className="App-header">
-          <Score score={0} usuario={1} />
-          <Timer start={false}/>
-          <Score score={0} usuario={2} />
-        </div>
+        <Header />
       </div>
       <main className="tablero">
         <Fichero />
