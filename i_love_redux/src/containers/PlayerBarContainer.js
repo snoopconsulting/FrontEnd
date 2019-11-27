@@ -5,11 +5,12 @@ import { playButton, stopButton } from '../actions/ButtonAction';
 import Timer from '../components/Timer';
 import { playTimer, stopTimer } from '../actions/TimerAction';
 import ProgressBar from '../components/ProgressBar';
-import { playProgressBar, stopProgressBar } from '../actions/ProgressActionBar';
+import { playProgressBar, stopProgressBar } from '../actions/ProgressBarAction';
 
 function mapStateToProps(state) {
   return {
-    isButtonPlay: state.button.isPlay
+    isButtonPress: state.button.isPress,
+    timer: state.timer.time
   };
 }
 
@@ -25,7 +26,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 handleClickButton = () => {
-  if (this.props.isButtonPlay) {
+  if (this.props.isButtonPress) {
     this.props.stopButton();
     this.props.stopTimer();
     this.props.stopProgressBar();
@@ -36,12 +37,12 @@ handleClickButton = () => {
   }
 }
 
-class PlayerContainer extends Component {
+class PlayerBarContainer extends Component {
   render() {
     return (
       <div>
-        <Button onClick={this.handleClickButton} />
-        <Timer />
+        <Button onClick={this.handleClickButton} txtPress={this.props.isButtonPress ? 'Stop' : 'Play'} />
+        <Timer txtTime={this.props.time} />
         <ProgressBar />
       </div>
     );
@@ -51,4 +52,4 @@ class PlayerContainer extends Component {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(PlayerContainer);
+)(PlayerBarContainer);

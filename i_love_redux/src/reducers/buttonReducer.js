@@ -1,4 +1,4 @@
-import { SET_LIST } from '../config/constants/actionTypesConstant';
+import { PLAY_BUTTON } from '../config/constants/actionTypesConstant';
 
 const initialState = {
   items: []
@@ -6,7 +6,7 @@ const initialState = {
 
 export default ( state = initialState, { type, payload } ) => {
   switch (type) {
-    case SET_LIST:
+    case PLAY_BUTTON:
       return {
         ...state,
         items: payload
