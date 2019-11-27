@@ -4,6 +4,8 @@
 .ficha button{
     background-color: #222222;
     color: #fff;
+    font-size: 1.5rem;
+    text-transform: uppercase;
     height: 60px;
     width: 60px;
 }
