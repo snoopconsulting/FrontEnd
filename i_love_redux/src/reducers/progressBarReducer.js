@@ -1,22 +1,21 @@
-import { PLAY_BUTTON, STOP_BUTTON } from '../config/constants/actionTypesConstant';
+import { PLAY_PROGRESS_BAR, STOP_PROGRESS_BAR } from '../config/constants/actionTypesConstant';
 
 const initialState = {
-  text: 'Stop',
-  isPlay: false
+  progress: []
 };
 
 export default ( state = initialState, { type, payload } ) => {
   switch (type) {
-    case PLAY_BUTTON:
+    case PLAY_PROGRESS_BAR:
       return {
         ...state,
-        text: payload
+        progress: payload
       };
 
-      case STOP_BUTTON:
+      case STOP_PROGRESS_BAR:
         return {
           ...state,
-          text: payload
+          progress: payload
         };
 
     default:

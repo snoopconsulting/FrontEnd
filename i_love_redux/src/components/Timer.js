@@ -1,11 +1,13 @@
-import React, { PureComponent } from 'react'
+import React from 'react';
 
-export default class Timer extends PureComponent {
-  render() {
-    return (
-      <div>
-        { this.props.txtTime }
-      </div>
-    )
-  }
+function Timer(props) {
+  let { timeText } = props;
+
+  return (
+    <div>
+      { timeText }
+    </div>
+  );
 }
+
+export default Timer;

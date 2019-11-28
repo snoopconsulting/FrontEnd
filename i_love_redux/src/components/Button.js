@@ -1,11 +1,13 @@
-import React, { PureComponent } from 'react'
+import React from 'react';
 
-export default class Button extends PureComponent {
-  render() {
-    return (
-      <div>
-        { this.props.txtPress }
-      </div>
-    )
-  }
+function Button(props) {
+  let { buttonText } = props;
+
+  return (
+    <div style={{backgroundColor: 'red', cursor: 'pointer'}}>
+      { buttonText }
+    </div>
+  );
 }
+
+export default Button;

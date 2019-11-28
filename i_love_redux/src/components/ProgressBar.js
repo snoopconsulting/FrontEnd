@@ -1,11 +1,11 @@
-import React, { PureComponent } from 'react'
+import React from 'react';
 
-export default class ProgressBar extends PureComponent {
-  render() {
-    return (
-      <div>
-        "Bar progress"
-      </div>
-    )
-  }
+function ProgressBar(props) {
+  return (
+    <div>
+      "Bar progress"
+    </div>
+  );
 }
+
+export default ProgressBar;
