@@ -1,10 +1,11 @@
 import React from 'react';
+import buttonStyle from '../assets/styles/buttonStyle'
 
 function Button(props) {
   let { buttonText } = props;
 
   return (
-    <div style={{backgroundColor: 'red', cursor: 'pointer'}}>
+    <div style={buttonStyle.box}>
       { buttonText }
     </div>
   );

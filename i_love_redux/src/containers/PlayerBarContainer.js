@@ -6,6 +6,7 @@ import Timer from '../components/Timer';
 import { incrementTimer, resetTimer } from '../actions/TimerAction';
 import ProgressBar from '../components/ProgressBar';
 import { incrementProgressBar, resetProgressBar } from '../actions/ProgressBarAction';
+import playerBarContainerStyle from '../assets/styles/playerBarContainerStyle';
 
 function mapStateToProps(state) {
   return {
@@ -67,7 +68,7 @@ class PlayerBarContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div style={playerBarContainerStyle.box}>
         <div onClick={this.handleClickButton}>
           <Button buttonText={this.props.buttonText} />
         </div>
