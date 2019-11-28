@@ -1,11 +1,11 @@
-import { PLAY_TIMER, STOP_TIMER } from '../config/constants/actionTypesConstant';
+import { INCREMENT_TIMER, RESET_TIMER } from '../config/constants/actionTypesConstant';
 
-export const playTimer = payload => ({
+export const incrementTimer = payload => ({
     payload,
-    type: PLAY_TIMER
+    type: INCREMENT_TIMER
 });
 
-export const stopTimer = payload => ({
+export const resetTimer = payload => ({
     payload,
-    type: STOP_TIMER
+    type: RESET_TIMER
 });

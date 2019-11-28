@@ -1,22 +1,22 @@
-import { PLAY_PROGRESS_BAR, STOP_PROGRESS_BAR } from '../config/constants/actionTypesConstant';
+import { INCREMENT_PROGRESS_BAR, RESET_PROGRESS_BAR } from '../config/constants/actionTypesConstant';
 
 const initialState = {
-  progress: []
+  value: 0
 };
 
 export default ( state = initialState, { type, payload } ) => {
   switch (type) {
-    case PLAY_PROGRESS_BAR:
+    case INCREMENT_PROGRESS_BAR:
       return {
         ...state,
-        progress: payload
+        value: payload+1
       };
 
-      case STOP_PROGRESS_BAR:
-        return {
-          ...state,
-          progress: payload
-        };
+    case RESET_PROGRESS_BAR:
+      return {
+        ...state,
+        value: 0
+      };
 
     default:
       return state;

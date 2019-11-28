@@ -3,46 +3,65 @@ import { connect } from 'react-redux';
 import Button from '../components/Button';
 import { playButton, stopButton } from '../actions/ButtonAction';
 import Timer from '../components/Timer';
-import { playTimer, stopTimer } from '../actions/TimerAction';
+import { incrementTimer, resetTimer } from '../actions/TimerAction';
 import ProgressBar from '../components/ProgressBar';
-import { playProgressBar, stopProgressBar } from '../actions/ProgressBarAction';
+import { incrementProgressBar, resetProgressBar } from '../actions/ProgressBarAction';
 
 function mapStateToProps(state) {
   return {
     isButtonPlay: state.button.isPlay,
     buttonText: state.button.text,
-    timeText: state.timer.text,
-    progress: state.progressBar.progress
+    timeValue: state.timer.value,
+    progressValue: state.progressBar.value
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    playButton: () => dispatch(playButton),
-    stopButton: () => dispatch(stopButton),
-    playTimer: () => dispatch(playTimer),
-    stopTimer: () => dispatch(stopTimer),
-    playProgressBar: () => dispatch(playProgressBar),
-    stopProgressBar: () => dispatch(stopProgressBar)
+    playButton: (text) => dispatch(playButton(text)),
+    stopButton: (text) => dispatch(stopButton(text)),
+    incrementTimer: (value) => dispatch(incrementTimer(value)),
+    resetTimer: () => dispatch(resetTimer()),
+    incrementProgressBar: (value) => dispatch(incrementProgressBar(value)),
+    resetProgressBar: () => dispatch(resetProgressBar())
   };
 }
 
 class PlayerBarContainer extends Component {
   constructor() {
     super();
-    this.handleClickButton = this.handleClickButton.bind(this);
+    this.runVideoInterval = null;
+  }
+
+  stop = () => {
+    this.props.stopButton('Stop');
+    clearInterval(this.runVideoInterval);
+  }
+
+  reset = () => {
+    this.props.stopButton('Stop');
+    this.props.resetTimer();
+    this.props.resetProgressBar();
+    clearInterval(this.runVideoInterval);
+  }
+
+  increment = () => {
+    this.props.incrementTimer(this.props.timeValue);
+    this.props.incrementProgressBar(this.props.progressValue);
   }
 
   handleClickButton = () => {
-    console.log('log :: PlayerBarContainer :: handleClickButton');
     if (this.props.isButtonPlay) {
-      this.props.stopButton();
-      this.props.stopTimer();
-      this.props.stopProgressBar();
+      this.stop();
     } else {
-      this.props.playButton();
-      this.props.playTimer();
-      this.props.playProgressBar();
+      this.props.playButton('Play');
+      this.runVideoInterval = setInterval(() => {
+        if (this.props.timeValue === 4) {
+          this.reset();
+        } else {
+          this.increment();
+        }
+      }, 1000);
     }
   }
 
@@ -52,8 +71,8 @@ class PlayerBarContainer extends Component {
         <div onClick={this.handleClickButton}>
           <Button buttonText={this.props.buttonText} />
         </div>
-        <Timer timeText={this.props.timeText} />
-        <ProgressBar progress={this.props.progress} />
+        <Timer timeValue={this.props.timeValue} />
+        <ProgressBar progressValue={this.props.progressValue} />
       </div>
     );
   }

@@ -1,22 +1,22 @@
-import { PLAY_TIMER, STOP_TIMER } from '../config/constants/actionTypesConstant';
+import { INCREMENT_TIMER, RESET_TIMER } from '../config/constants/actionTypesConstant';
 
 const initialState = {
-  text: []
+  value: 0
 };
 
 export default ( state = initialState, { type, payload } ) => {
   switch (type) {
-    case PLAY_TIMER:
+    case INCREMENT_TIMER:
       return {
         ...state,
-        text: payload
+        value: payload+1
       };
 
-    case STOP_TIMER:
-      return {
-        ...state,
-        text: payload
-      };
+      case RESET_TIMER:
+        return {
+          ...state,
+          value: 0
+        };
   
     default:
       return state;

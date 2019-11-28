@@ -1,11 +1,11 @@
 import React from 'react';
 
 function Timer(props) {
-  let { timeText } = props;
+  let { timeValue } = props;
 
   return (
     <div>
-      { timeText }
+      { timeValue }
     </div>
   );
 }

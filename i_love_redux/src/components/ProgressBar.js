@@ -1,9 +1,11 @@
 import React from 'react';
 
 function ProgressBar(props) {
+  let { progressValue } = props;
+
   return (
     <div>
-      "Bar progress"
+      { progressValue } %
     </div>
   );
 }

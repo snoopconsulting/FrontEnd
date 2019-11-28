@@ -10,13 +10,15 @@ export default ( state = initialState, { type, payload } ) => {
     case PLAY_BUTTON:
       return {
         ...state,
-        text: payload
+        text: payload,
+        isPlay: true
       };
 
       case STOP_BUTTON:
         return {
           ...state,
-          text: payload
+          text: payload,
+          isPlay: false
         };
 
     default:

@@ -1,11 +1,11 @@
-import { PLAY_PROGRESS_BAR, STOP_PROGRESS_BAR } from '../config/constants/actionTypesConstant';
+import { INCREMENT_PROGRESS_BAR, RESET_PROGRESS_BAR } from '../config/constants/actionTypesConstant';
 
-export const playProgressBar = payload => ({
+export const incrementProgressBar = payload => ({
     payload,
-    type: PLAY_PROGRESS_BAR
+    type: INCREMENT_PROGRESS_BAR
 });
 
-export const stopProgressBar = payload => ({
+export const resetProgressBar = payload => ({
     payload,
-    type: STOP_PROGRESS_BAR
+    type: RESET_PROGRESS_BAR
 });
