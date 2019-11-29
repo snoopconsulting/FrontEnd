@@ -1,6 +1,8 @@
 const buttonStyles = {
   box: {
-    backgroundColor: 'red'
+  },
+  img: {
+    width: 60
   }
 };
 

@@ -1,4 +1,5 @@
 export const CONSTANTS = {
   DEBUG_MODE: true,
-  ENVIRONMENT: 'dev'
+  ENVIRONMENT: 'dev',
+  VIDEO_TIME: 10
 };

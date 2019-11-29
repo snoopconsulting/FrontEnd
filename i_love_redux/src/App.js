@@ -9,11 +9,9 @@ const store = initStore();
 function App() {
   return (
     <Provider store={ store } >
-      <div className="App">
-        <section>
-          <PlayerBarContainer />
-        </section>
-      </div>
+      <section className="App">
+        <PlayerBarContainer />
+      </section>
     </Provider>
   );
 }

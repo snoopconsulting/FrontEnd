@@ -7,11 +7,11 @@ import { incrementTimer, resetTimer } from '../actions/TimerAction';
 import ProgressBar from '../components/ProgressBar';
 import { incrementProgressBar, resetProgressBar } from '../actions/ProgressBarAction';
 import playerBarContainerStyle from '../assets/styles/playerBarContainerStyle';
+import { CONSTANTS } from '../config/constants/indexConstant';
 
 function mapStateToProps(state) {
   return {
     isButtonPlay: state.button.isPlay,
-    buttonText: state.button.text,
     timeValue: state.timer.value,
     progressValue: state.progressBar.value
   };
@@ -19,8 +19,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    playButton: (text) => dispatch(playButton(text)),
-    stopButton: (text) => dispatch(stopButton(text)),
+    playButton: () => dispatch(playButton()),
+    stopButton: () => dispatch(stopButton()),
     incrementTimer: (value) => dispatch(incrementTimer(value)),
     resetTimer: () => dispatch(resetTimer()),
     incrementProgressBar: (value) => dispatch(incrementProgressBar(value)),
@@ -35,12 +35,12 @@ class PlayerBarContainer extends Component {
   }
 
   stop = () => {
-    this.props.stopButton('Stop');
+    this.props.stopButton();
     clearInterval(this.runVideoInterval);
   }
 
   reset = () => {
-    this.props.stopButton('Stop');
+    this.props.stopButton();
     this.props.resetTimer();
     this.props.resetProgressBar();
     clearInterval(this.runVideoInterval);
@@ -55,9 +55,9 @@ class PlayerBarContainer extends Component {
     if (this.props.isButtonPlay) {
       this.stop();
     } else {
-      this.props.playButton('Play');
+      this.props.playButton();
       this.runVideoInterval = setInterval(() => {
-        if (this.props.timeValue === 4) {
+        if (this.props.timeValue === CONSTANTS.VIDEO_TIME) {
           this.reset();
         } else {
           this.increment();
@@ -70,7 +70,7 @@ class PlayerBarContainer extends Component {
     return (
       <div style={playerBarContainerStyle.box}>
         <div onClick={this.handleClickButton}>
-          <Button buttonText={this.props.buttonText} />
+          <Button isButtonPlay={this.props.isButtonPlay} />
         </div>
         <Timer timeValue={this.props.timeValue} />
         <ProgressBar progressValue={this.props.progressValue} />
