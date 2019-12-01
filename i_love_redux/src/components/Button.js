@@ -1,7 +1,7 @@
 import React from 'react';
 import buttonStyle from '../assets/styles/buttonStyle';
-import playImg from '../assets/images/play.svg';
-import pauseImg from '../assets/images/pause.svg';
+import playImg from '../assets/images/play.png';
+import pauseImg from '../assets/images/pause.png';
 
 function Button(props) {
   let { isButtonPlay } = props;
