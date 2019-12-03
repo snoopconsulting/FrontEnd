@@ -16,9 +16,9 @@ function App() {
         <Header />
       </div>
       <main className="tablero">
-        <Fichero />
+        <Fichero tipo={TYPE_O} />
         <Tablero />
-        <Fichero />
+        <Fichero tipo={TYPE_X} />
       </main>
     </Provider>
   );

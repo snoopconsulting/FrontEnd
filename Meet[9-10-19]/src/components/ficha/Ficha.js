@@ -9,7 +9,7 @@ class Ficha extends Component {
         return (
             <div className="ficha">
                 <button>
-                    { this.props.tipo === 'TYPE_X' ? 'x' : 'o'}
+                    { this.props.tipo === TYPE_X ? 'x' : 'o'}
                 </button>
             </div>
         );

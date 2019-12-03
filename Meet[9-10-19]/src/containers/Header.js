@@ -25,6 +25,7 @@ class Header extends Component {
                 
                 <Timer start={this.props.timer.isTimerRunning} finishLoop={this.changeTimeRunning} timerLoop={this.props.timer.timerLoop} />
                 <button onClick={this.resetCont}>Reset</button>  
+                
                 <Score score={0} usuario={'2'} />
             </div>
         );
