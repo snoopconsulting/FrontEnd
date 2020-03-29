@@ -1,0 +1,2 @@
+export const SET_TIME_RUNNING = 'SET_TIME_RUNNING';
+export const CHOOSE_SPOT = 'CHOOSE_SPOT';

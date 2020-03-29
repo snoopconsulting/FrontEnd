@@ -1,0 +1,14 @@
+.App {
+  font-size: 16px;
+}
+
+.App-header {
+  display: flex;
+  justify-content: space-between;
+}
+.tablero{
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  margin: 95px 0;
+}
